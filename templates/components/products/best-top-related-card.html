@@ -1,0 +1,68 @@
+<article class="card {{#if alternate}}card--alternate{{/if}}">
+    <figure class="card-figure">
+
+    
+        <p>
+            {{#each product.custom_fields}}
+                <dt class="productView-info-name">{{name}}:</dt>
+                <dd class="productView-info-value">{{{value}}}</dd>
+            {{/each}}
+        </p>
+
+        <a href="{{url}}">
+            <img class="card-image" src="{{getImage image 'gallery' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}">
+        </a>
+        <figcaption class="card-figcaption {{#if brand.name '==' 'Philosophy'}}no-atc{{/if}}">
+            <div class="card-figcaption-body">
+                
+                {{#if show_cart_action}}
+
+                    {{#if has_options}}
+                        <a href="{{url}}" class="button button--small card-figcaption-button" data-product-id="{{id}}">VIEW OPTIONS</a>
+                    {{/if}}
+
+                    {{#if add_to_cart_url }}
+                        <a href="{{add_to_cart_url}}" class="button button--small card-figcaption-button">ADD TO BAG</a>
+                    {{/if}}
+
+                    {{#if out_of_stock_message }}
+                        <a href="{{url}}" class="button button--small card-figcaption-button" data-product-id="{{id}}">OUT OF STOCK</a>
+                    {{/if}} 
+
+                {{/if}}
+
+            </div>
+        </figcaption>
+    </figure>
+    <div class="card-body">
+        
+        <p class="card-text brand-name" data-test-info-type="brandName">{{brand.name}}</p>
+        
+        <h4 class="card-title">
+            <a href="{{url}}">{{name}}</a>
+        </h4>
+
+        <div class="card-text" data-test-info-type="price">
+            {{> components/products/price price=price}}
+        </div>
+
+        {{#if custom_fields}}
+        <ul class="hide-cfs">
+        {{#each custom_fields}}
+            <li class="custom-field {{name}}">
+                <span class="productView-info-name {{name}}">{{name}}:</span>
+                <span class="productView-info-value {{{value}}}">{{{value}}}</span>
+            </li>
+        {{/each}}
+        </ul>    
+        {{/if}}
+
+        <a href="{{url}}" class="po-wrap">
+            <div class="yotpo bottomLine"
+            data-product-id="{{id}}"
+            data-url="{{url}}">
+            </div>
+        </a>
+
+    </div>
+</article>

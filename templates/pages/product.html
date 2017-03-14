@@ -1,0 +1,50 @@
+---
+
+recently_viewed: true
+
+product:
+    reviews:
+        limit: {{theme_settings.productpage_reviews_count}}
+    related_products:
+        limit: 15
+    similar_by_views:
+        limit: 15
+
+
+---
+{{#partial "page"}}
+
+    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+    {{#each product.shipping_messages}}
+        {{> components/common/alert-info message}}
+    {{/each}}
+
+    <div itemscope itemtype="http://schema.org/Product">
+        {{> components/products/product-view schema=true}}
+    </div>
+
+    <!-- <div class="yotpo placeholder"></div> -->
+
+<!--     <script type="text/javascript">//<![CDATA[
+      var div = document.createElement("div");
+      div.setAttribute('class', 'yotpo yotpo-main-widget');
+      div.setAttribute('data-product-id',"{{product.id}}");
+      div.setAttribute('data-name',"{{product.title}}");
+      div.setAttribute('data-url', "{{product.url}}");
+      div.setAttribute('data-description',"");
+      div.setAttribute('data-image-url', "");
+      if ($(".yotpo.placeholder").length) {
+      $(".yotpo.placeholder").append(div);
+      } else {
+      $("#product-reviews-section").append(div);
+      }
+    //]]></script>​ -->
+
+    <div class="related-products">
+        <h2 class="page-heading">You May Also Like</h2>
+        {{> components/products/carousel products=product.related_products columns=6}}
+    </div>
+   
+{{/partial}}
+{{> layout/base}}

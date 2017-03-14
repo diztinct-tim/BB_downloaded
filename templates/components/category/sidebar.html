@@ -1,0 +1,30 @@
+<nav>
+    {{#if category.subcategories}}
+    <div class="sidebarBlock sub-cat-list">
+        <!-- <h5 class="sidebarBlock-heading">{{category.name}}</h5> -->
+        <h5>Categories</h5>
+        <ul class="navList">
+            {{#each category.subcategories}}
+            <li class="navList-item">
+                <a class="navList-action" href="{{url}}" alt="{{name}}">{{name}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    {{/if}}
+
+    {{#if category.faceted_search_enabled}}
+        {{> components/faceted-search/index category}}
+    {{else}}
+        {{> components/category/shop-by-price shop_by_price=category.shop_by_price category_url=category.url}}
+    {{/if}}
+</nav>
+
+
+ 
+<!-- 
+    <ul class="brandGrid">
+        {{#each brands}}
+            <li class="brand"><a href="{{url}}">{{name}}</a></li>
+        {{/each}}
+    </ul> -->

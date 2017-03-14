@@ -1,0 +1,46 @@
+<article class="card {{#if alternate}}card--alternate{{/if}}">
+    <figure class="card-figure">
+        <a href="{{url}}">
+            <img class="card-image" src="{{getImage image 'product' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}">
+        </a>
+        <figcaption class="card-figcaption">
+            <div class="card-figcaption-body">
+
+                <!-- {{#unless hide_product_quick_view}}
+                    {{#if theme_settings.show_product_quick_view}}
+                        <a href="#" class="button button--small card-figcaption-button quickview" data-product-id="{{id}}">{{lang 'products.quick_view'}}</a>
+                    {{/if}}
+                {{/unless}} -->
+                
+                {{#if show_cart_action}}
+
+                    {{#if has_options}}
+                        <a href="{{url}}" class="button button--small card-figcaption-button" data-product-id="{{id}}">VIEW OPTIONS</a>
+                    {{/if}}
+
+                    {{#if add_to_cart_url }}
+                        <a href="{{add_to_cart_url}}" class="button button--small card-figcaption-button">ADD TO BAG</a>
+                    {{/if}}
+
+                    {{#if out_of_stock_message }}
+                        <a href="{{url}}" class="button button--small card-figcaption-button" data-product-id="{{id}}">OUT OF STOCK</a>
+                    {{/if}} 
+
+                {{/if}}
+
+            </div>
+        </figcaption>
+    </figure>
+    <div class="card-body">
+        
+        <p class="card-text brand-name" data-test-info-type="brandName">{{brand.name}}</p>
+        
+        <h4 class="card-title">
+            <a href="{{url}}">{{name}}</a>
+        </h4>
+        <div class="card-text" data-test-info-type="price">
+            {{> components/products/price price=price}}
+        </div>
+        
+    </div>
+</article>

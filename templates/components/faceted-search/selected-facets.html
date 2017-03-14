@@ -1,0 +1,32 @@
+<!-- <div class="facetedSearch-refineFilters sidebarBlock"> -->
+    
+
+    {{#if this.items}}
+    <div class="facetedSearch-refineFilters sidebarBlock">
+        <p class="you-selected">You've selected:</p>
+        <ul class="inlineList inlineList--labels">
+            {{#each this.items}}
+                <li>Filter:
+                    <a
+                        href="{{ url }}"
+                        class="facetLabel"
+                        data-faceted-search-facet>
+                        
+                            {{ title }}
+
+                        <svg class="icon">
+                            <use xlink:href="#icon-close" />
+                        </svg>
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+        <a href="{{ remove_all_url }}" data-faceted-search-facet>Clear</a>
+    </div>
+    {{/if}}
+    
+
+    {{#if remove_all_url}}
+        <!-- <a href="{{ remove_all_url }}" data-faceted-search-facet>Clear</a> -->
+    {{/if}}
+

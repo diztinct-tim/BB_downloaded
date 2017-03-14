@@ -1,0 +1,34 @@
+<div class="pagination">
+    <ul class="pagination-list">
+
+        {{#if previous}}
+            <li class="pagination-item pagination-item--previous"  data-page-num="next">
+                <a class="pagination-link" href="{{previous}}" {{#unless reload}}data-faceted-search-facet{{/unless}}>
+                    PREV
+                </a>
+            </li>
+        {{/if}}
+
+        {{inject "paginationLength" links.length}}
+
+        {{#each links}}
+            {{#if this.number '==' ../current}}
+                <li class="pagination-item pagination-item--current" data-page-num="{{this.number}}">
+                    <a class="pagination-link" href="{{this.url}}" {{#unless reload}}data-faceted-search-facet{{/unless}}>{{this.number}}</a>
+                </li>
+            {{else}}
+                <li class="pagination-item" data-page-num="{{this.number}}">
+                    <a class="pagination-link" href="{{this.url}}" {{#unless reload}}data-faceted-search-facet{{/unless}}>{{this.number}}</a>
+                </li>
+            {{/if}}
+        {{/each}}
+        
+        {{#if next}}
+            <li class="pagination-item pagination-item--next" data-page-num="next">
+                <a class="pagination-link" href="{{next}}" {{#unless reload}}data-faceted-search-facet{{/unless}}>
+                    NEXT
+                </a>
+            </li>
+        {{/if}}
+    </ul>
+</div>

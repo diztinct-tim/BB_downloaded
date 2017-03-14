@@ -1,0 +1,69 @@
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+<main class="page info-page">
+
+    <h1 class="page-heading">{{page.title}}</h1>
+
+    {{#if page.sub_pages}}
+        <nav class="navBar">
+            <ul class="navBar-section">
+                {{#each page.sub_pages}}
+                    <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+                {{/each}}
+            </ul>
+        </nav>
+    {{/if}}
+
+    <div class="page-content page-content--centered {{#if forms.contact.success}}contact-form-success{{/if}}">
+        {{#if forms.contact.success}}
+            <p class="success-form">We've received your feedback and will respond shortly if required. <a href="/">Continue Shopping</a></p>
+            <div class="info-side-bar">
+                <div class="customer-care"><span><a href="http://www.beautybridge.com/customer-care/">Customer Care</a></span>
+                    <ul>
+                        <li><a href="http://www.beautybridge.com/shipping/">Shipping</a></li>
+                        <li><a href="http://www.beautybridge.com/returns/">Returns</a></li>
+                        <li><a href="http://www.beautybridge.com/faq/">FAQ's</a></li>
+                        <!-- <li><a href="http://www.beautybridge.com/rewards-program/">Rewards Program</a></li> -->
+                        <li class="active"><a href="http://www.beautybridge.com/contact-us/">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="company">
+                    <span><a href="http://www.beautybridge.com/company/">Company</a></span>
+                    <ul>
+                        <li><a href="http://www.beautybridge.com/about-us/">About Us</a></li>
+                        <li><a href="http://www.beautybridge.com/privacy-policy/">Privacy Policy</a></li>
+                        <li><a href="http://www.beautybridge.com/affiliate-program/">Affiliate Program</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-info-container">
+                <p><strong>24 hours a day, 7 days a week</strong> please feel free to contact our friendly Customer Service Department. <br /> You can contact us by phone, email or mail.<br /><br /> Toll Free : <a href="tel:+8668306161">1-866-830-6161</a><br /> Phone : <a href="tel:+9734472441">1-973-447-2441</a><br /> Fax : 1-973-447-9777<br /> <br /><strong>Mailing Address:</strong><br /> Beauty Bridge<br /> 639 Passaic Avenue<br /> Nutley, NJ 07110 <br /><br /> You can also visit our spa in Nutley, NJ<br /><br /> <strong>Store hours:</strong><br /> Monday - Friday: 9.30 AM to 6.00 PM (Eastern Standard Time)<br />Closed on Saturday, Sunday &amp; National holidays.</p>
+                <div class="contact-us-again">
+                    {{> components/page/contact-us-form}}
+                </div>
+            </div>
+        {{else}}
+            <p>{{{page.content}}}</p>
+            {{> components/page/contact-us-form}}
+        {{/if}}
+
+    </div>
+
+    <script>
+
+        dataLayer = [{
+          'pageType': 'static',
+          'pageTitle': 'Contact Us',
+          'slug': '/contact-us/',
+          'email': '{{customer.email}}'
+        }];
+           
+    </script>
+
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

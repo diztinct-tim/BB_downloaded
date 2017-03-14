@@ -1,0 +1,347 @@
+<nav class="navPages">
+    <div class="main clearfix">
+
+            <div class="left-column cf">
+                <div class="info-links med-up">
+                    {{#if customer}}
+                        <ul class="navPages-list navPages-list--user">
+                            <li class="navPages-item">
+                                <a class="navPage-subMenu-action navPages-action" href="/account.php">My Account</a>
+                            </li>
+                            <li class="navPages-item">
+                                <a class="navPages-action" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a>
+                            </li>                
+                            <li class="navPages-item">
+                                <a class="navPage-subMenu-action navPages-action" href="/contact-us/">Contact Us</a>
+                            </li>
+
+                        </ul>
+                    {{else}}
+                        <ul class="navPages-list navPages-list--user">
+                            <li class="navPages-item">
+                                <a class="navPage-subMenu-action navPages-action" href="/account.php">My Account</a>
+                            </li>
+                            <li class="navPages-item">
+                                <a class="navPages-action" href="{{urls.auth.login}}">{{lang 'common.login'}}</a> OR <a class="navPages-action" href="{{urls.auth.create_account}}">{{lang 'common.sign_up'}}</a>
+                            </li>           
+                            <li class="navPages-item">
+                                <a class="navPage-subMenu-action navPages-action" href="/contact-us/">Contact Us</a>
+                            </li>
+                        </ul>
+                    {{/if}}
+                </div>
+            </div>
+
+
+
+
+            <div class="column">
+                <div id="dl-menu" class="dl-menuwrapper">
+                    <!-- <button class="dl-trigger">Open Menu</button> -->
+                    <ul class="dl-menu">
+
+                        <li class="parent-li" data-name="Makeup">
+                            <a class="cat-name" href="/makeup">Makeup</a>
+                            <ul class="dl-submenu">
+                                <li>
+                                    <li><a href="/makeup/">All Makeup</a></li>
+                                    <li><a href="/makeup/face/pressed-foundation/">Pressed Foundation</a></li>
+                                    <li><a href="/makeup/face/bronzer-glow/">Bronzer & Glow</a></li>
+                                    <li><a href="/makeup/lips/lipstick/">Lipstick</a></li>
+                                    <li><a href="/makeup/eyes/eyeshadow/">Eyeshadow</a></li>
+                                    <li><a href="/makeup/face/cream-foundation/">Cream Foundation</a></li>
+                                    <li><a href="/makeup/nails/nail-polish/">Nail Polish</a></li>
+                                    <li><a href="/makeup/combination/">Makeup Kits</a></li>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">Top Concerns</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/makeup/?concern[]=Age+Spots+%26+Brown+Spots">Age Sports & Brown Spots</a></li>
+                                        <li><a href="/makeup/?concern[]=Chapped+Lips">Chapped Lips</a></li>
+                                        <li><a href="/makeup/?concern[]=Dark+Circles+%26+Puffiness">Dark Circles & Puffiness</a></li>
+                                        <li><a href="/makeup/?concern[]=Dry+Hands+%26+Cuticle">Dry Hands & Cuticle</a></li>
+                                        <li><a href="/makeup/?concern[]=Enlarged+Pores+%26+Blackheads">Enlarged Pores & Blackheads</a></li>
+                                        <li><a href="/makeup/?concern[]=Lip+Plumping">Lip Plumping</a></li>
+                                        <li><a href="/makeup/?concern[]=Thinning+Eyelashes">Thinning Eyelashes</a></li>
+                                        <li><a href="/makeup/" class="view-all">View All</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">Featured Shops</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/featured-shops/the-best-coverage-makeup/">Corrective Cosmetics</a></li>
+                                        <li><a href="/featured-shops/this-holiday-lets-celebrate-you/eyes-have-it/">Eyes Have It</a></li>
+                                        <li><a href="/featured-shops/this-holiday-lets-celebrate-you/color-me-softly/">Color Me Softly</a></li>
+                                        <li><a href="/featured-shops/this-holiday-lets-celebrate-you/captivating-nails/">Captivating Nails</a></li>
+                                        <li><a href="/featured-shops/the-best-coverage-makeup/">Corrective Cosmetics</a></li>                                        
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-children"  href="#">New Top Sellers</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/makeup/?sort=bestselling">Top Sellers</a></li>
+                                        <li><a href="/makeup/?sort=newest">What's New</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="parent-li" data-name="Skincare">
+                            <a class="cat-name" href="#">Skincare</a>
+                            <ul class="dl-submenu">
+                                <li>
+                                    <li><a href="/skincare/">All Skincare</a></li>
+                                    <li><a href="/skincare/face/moisturizers/">Moisturizers</a></li>
+                                    <li><a href="/skincare/face/anti-aging/">Anti-Aging</a></li>
+                                    <li><a href="/skincare/suncare-tanning/">Suncare & Tanning</a></li>
+                                    <li><a href="/skincare/face/cleansers/">Cleansers</a></li>
+                                    <li><a href="/skincare/face/masques/">Masques</a></li>
+                                    <li><a href="/skincare/eyes/">Eye Care</a></li>
+                                    <li><a href="/skincare/skincare-kits/">Skincare Kits</a></li>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">Top Concerns</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/skincare/?product%20type[]=Acne+Treatment">Acne & Breakouts</a></li>
+                                        <li><a href="/skincare/?concern[]=Dull+Complexion">Dull Complexion</a></li>
+                                        <li><a href="/skincare/?concern[]=Firmness+%28Facial%29">Firmness (Facial)</a></li>
+                                        <li><a href="/skincare/?concern[]=Hyperpigmentation+%26+Uneven+Skin+Tone">Hyperpigmentation </a></li>
+                                        <li><a href="/skincare/?concern[]=Redness+%26+Irritation">Redness & Irritation</a></li>
+                                        <li><a href="/skincare/?concern[]=Rosacea">Rosacea</a></li>
+                                        <li><a href="/skincare/?concern[]=Stretch+Marks">Stretch Marks</a></li>
+                                        <li><a href="/skincare/" class="view-all">View All</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">Featured Shops</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/featured-shops/natures-best-6-anti-aging-organic-skincare-products/">Anti-Aging Organic Skincare</a></li>
+                                        <li><a href="/skincare/?gift%20idea[]=For+Her">Gift Sets</a></li>
+                                        <li><a href="/skincare/suncare-tanning/">Get Ready for Summer</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">New Top Sellers</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/skincare/?sort=bestselling">Top Sellers</a></li>
+                                        <li><a href="/skincare/?sort=newest">What's New</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="parent-li" data-name="Bath & Body">
+                            <a class="cat-name" href="#">Bath & Body</a>
+                            <ul class="dl-submenu">
+                                <li>
+                                    <li><a href="/bath-body/">All Bath & Body</a></li>
+                                    <li><a href="/bath-body/body-moisturizers/">Body Moisturizers</a></li>
+                                    <li><a href="/bath-body/body-cleansers/bath-shower-gels/">Bath & Shower Gels</a></li>
+                                    <li><a href="/bath-body/body-moisturizers/body-creams-butters/">Creams & Butters</a></li>
+                                    <li><a href="/bath-body/body-moisturizers/body-oils-massage-oils/">Body Oils</a></li>
+                                    <li><a href="/bath-body/body-cleansers/bath-soaps/">Soaps</a></li>
+                                    <li><a href="/bath-body/bath-body-sets/">Bath & Body Sets</a></li>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">Top Concerns</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/bath-body/?concern[]=Athletes+Foot">Athletes Foot</a></li>
+                                        <li><a href="/bath-body/?concern[]=Body+Firming+%26+Tightening">Body Firming & Tightening</a></li>
+                                        <li><a href="/bath-body/?concern[]=Body+Odor">Body Odor</a></li>
+                                        <li><a href="/bath-body/?concern[]=Cellulite">Cellulite</a></li>
+                                        <li><a href="/bath-body/?concern[]=Dry+Hands+%26+Cuticle">Dry Hands & Cuticle</a></li>
+                                        <li><a href="/bath-body/?concern[]=Stretch+Marks">Stretch Marks</a></li>
+                                        <li><a href="/bath-body/?concern[]=Sunburn+%26+Sun+Damage">Sunburn & Sun Damage</a></li>
+                                        <li><a href="/bath-body/" class="view-all">View All</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">Featured Shops</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/featured-shops/this-holiday-lets-celebrate-you/bath-body-treats/">Bath & Body Treats</a></li>
+                                        <li><a href="/bath-body/mother-baby/">Mother & Baby</a></li>
+                                        <li><a href="/bath-body/body-treatments/foot-leg-treatments/">Foot Care</a></li>
+                                        <li><a href="/bath-body/supplements/">Beauty Supplements</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">New Top Sellers</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/bath-body/?sort=bestselling">Top Sellers</a></li>
+                                        <li><a href="/bath-body/?sort=newest">What's New</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="parent-li" data-name="Hair">
+                            <a class="cat-name" href="#">Hair</a>
+                            <ul class="dl-submenu">
+                                <li>
+                                    <li><a href="/hair-care/">All Hair Care</a></li>
+                                    <li><a href="/hair-care/hair-scalp-treatments/shampoo-damaged-or-chemically-treated-hair/">Shampoo</a></li>
+                                    <li><a href="/hair-care/hair-scalp-treatments/conditioners/">Conditioners</a></li>
+                                    <li><a href="/hair-care/hair-scalp-treatments/styling-products/">Styling Products</a></li>
+                                    <li><a href="/hair-care/hair-scalp-treatments/serums/">Serums</a></li>
+                                    <li><a href="/hair-care/hair-scalp-treatments/hair-care-sets/">Hair Care Sets</a></li>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">Top Concerns</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/hair-care/?concern[]=Dandruff+%26+Oily+Scalp">Dandruff & Oily Scalp</a></li>
+                                        <li><a href="/hair-care/?concern[]=Frizzy+Hair">Frizzy Hair</a></li>
+                                        <li><a href="/hair-care/?concern[]=Hair+Loss">Hair Loss</a></li>
+                                        <li><a href="/hair-care/?concern[]=Razor+Burn+%26+Ingrown+Hair">Split Ends</a></li>
+                                        <li><a href="/hair-care/" class="view-all">View All</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">Featured Shops</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/hair-care/body/hair-removal/">Hair Removal</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">New Top Sellers</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/hair-care/?sort=bestselling">Top Sellers</a></li>
+                                        <li><a href="/hair-care/?sort=newest">What's New</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="parent-li" data-name="For Men">
+                            <a class="cat-name" href="#">For Men</a>
+                            <ul class="dl-submenu">
+                                <li>
+                                    <li><a href="/for-men/">All Men</a></li>
+                                    <li><a href="/for-men/shave/">Shave</a></li>
+                                    <li><a href="/for-men/bath-body/">Bath & Body</a></li>
+                                    <li><a href="/for-men/skincare/">Skincare</a></li>
+                                    <li><a href="/for-men/hair-care/">Hair Care</a></li>
+                                    <li><a href="/for-men/gift-sets/">Gift Sets</a></li>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">Top Concerns</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/for-men/?concern[]=Acne+%26+Breakouts">Acne & Breakouts</a></li>
+                                        <li><a href="/for-men/?concern[]=Razor+Burn+%26+Ingrown+Hair">Razor Burn & Ingrown Hair</a></li>
+                                        <li><a href="/for-men/?concern[]=Sunburn+%26+Sun+Damage">Sunburn & Sun Damage</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">Featured Shops</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/featured-shops/this-holiday-lets-celebrate-you/lets-not-forget-him/">Let's Not Forget Him</a></li>
+                                        <li><a href="/for-men/suncare-tanning-products/">Ready Summer Men</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">New Top Sellers</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/for-men/?sort=bestselling">Top Sellers</a></li>
+                                        <li><a href="/for-men/?sort=newest">What's New</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="parent-li" data-name="Fragrances">
+                            <a class="cat-name" href="#">Fragrances</a>
+                            <ul class="dl-submenu">
+                                <li>
+                                    <li><a href="/fragrances/">All Fragrances</a></li>
+                                    <li><a href="/fragrances/for-women/eua-de-parfum-and-scents-for-women/">Eua de Parfum</a></li>
+                                    <li><a href="/fragrances/for-women/deodorants-for-women/">Deodorants</a></li>
+                                    <li><a href="/fragrances/for-women/gift-sets-for-women/">Gift Sets</a></li>
+                                    <li><a href="/fragrances/home/">Home Scents</a></li>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">Top Concerns</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/fragrances/?concern[]=Body+Odor">Body Odor</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">Featured Shops</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/fragrances/for-men/gift-sets-for-men/">Value Sets for Men</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-children" href="#">New Top Sellers</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="/fragrances/?sort=bestselling">Top Sellers</a></li>
+                                        <li><a href="/fragrances/?sort=newest">What's New</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="parent-li" data-name="Top Brands">
+                            <a class="cat-name" href="#">Brands</a>
+                            <ul class="dl-submenu">
+                                <li>
+                                    <li><a href="/brands">All Brands</a></li>
+                                    <li><a href="/brands/babor/">Babor</a></li>
+                                    <li><a href="/brands/bliss/">Bliss</a></li>
+                                    <li><a href="/brands/borghese/">Borghese</a></li>
+                                    <li><a href="/brands/briogeo/">Briogeo</a></li>
+                                   <li><a href="/brands/deborah-lippman/">Deborah Lippman</a></li>
+                                    <li><a href="/brands/dermablend/">Dermablend</a></li>
+                                    <li><a href="/brands/dermalogica/">Dermalogica</a></li>
+                                    <li><a href="/brands/eve-lom/">Eve Lom</a></li>
+                                    <li><a href="/brands/exuviance/">Exuviance</a></li>
+                                    <li><a href="/brands/fekkai/">Fekkai</a></li>
+                                    <li><a href="/brands/is-clinical/">Is Clinical</a></li>
+                                    <li><a href="/brands/japonesque/">Japonesque</a></li>
+                                    <li><a href="/brands/lab-series/">Lab Series</a></li>
+                                    <li><a href="/brands/lipstick-queen/">Lipstick Queen</a></li>
+                                    <li><a href="/brands/mama-mio/">Mama Mio</a></li>
+                                    <li><a href="/brands/pca-skin/">PCA Skin</a></li>
+                                    <li><a href="/brands/peter-thomas-roth/">Peter Thomas Roth</a></li>
+                                    <li><a href="/brands/philosophy/">Philosophy</a></li>
+                                    <li><a href="/brands/the-balm/">The Balm</a></li>
+                                    <li><a href="/brands/youngblood/">Youngblood Cosmetics</a></li>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <div class="info-links">
+                            {{#if customer}}
+                                <ul class="navPages-list navPages-list--user">
+                                    <li class="navPages-item">
+                                        <a class="navPage-subMenu-action navPages-action" href="/account.php">My Account</a>
+                                    </li>
+                                    <li class="navPages-item">
+                                        <a class="navPages-action" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a>
+                                    </li>
+                                    <li class="navPages-item">
+                                        <a class="navPage-subMenu-action navPages-action" href="/giftcertificates.php">Gift Certificates</a>
+                                    </li>   
+                                    <li class="navPages-item">
+                                        <a class="navPage-subMenu-action navPages-action" href="/contact-us/">Contact Us</a>
+                                    </li>
+
+                                </ul>
+                            {{else}}
+                                <ul class="navPages-list navPages-list--user">
+                                    <li class="navPages-item">
+                                        <a class="navPage-subMenu-action navPages-action" href="/account.php">My Account</a>
+                                    </li>
+                                    <li class="navPages-item">
+                                        <a class="navPages-action" href="{{urls.auth.login}}">{{lang 'common.login'}}</a> OR <a class="navPages-action" href="{{urls.auth.create_account}}">{{lang 'common.sign_up'}}</a>
+                                    </li>
+                                    <li class="navPages-item">
+                                        <a class="navPage-subMenu-action navPages-action" href="/giftcertificates.php">Gift Certificates</a>
+                                    </li>                 
+                                    <li class="navPages-item">
+                                        <a class="navPage-subMenu-action navPages-action" href="/contact-us/">Contact Us</a>
+                                    </li>
+                                </ul>
+                            {{/if}}
+                        </div>
+
+                    </ul>
+                </div><!-- /dl-menuwrapper -->
+            </div>
+
+    </div>
+</nav>

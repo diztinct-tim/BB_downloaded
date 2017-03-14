@@ -1,0 +1,48 @@
+<h5 class="footer-info-heading">NEWSLETTER</h5>
+
+<!--<form class="form" action="{{urls.subscribe.action}}" method="post">
+    <fieldset class="form-fieldset">
+        <input type="hidden" name="action" value="subscribe">
+        <input type="hidden" name="nl_first_name" value="bc">
+        <input type="hidden" name="check" value="1">
+        <div class="form-field">
+            <label class="form-label u-hiddenVisually" for="nl_email">{{lang 'common.email_address'}}</label>
+            <div class="form-prefixPostfix wrap">
+                <input class="form-input" id="nl_email" name="nl_email" type="email" value="{{customer.email}}" placeholder="{{lang 'newsletter.email_placeholder'}}">
+                <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="JOIN">
+            </div>
+        </div>
+    </fieldset>
+</form>-->
+
+<form id="email_signup" style="max-width: none" class="form klaviyo_styling klaviyo_standard_embed_DW4k5a" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+   <fieldset class="form-fieldset" >
+        <input type="hidden" name="g" value="DW4k5a" />
+        <div class="form-field"  style="width:100%; " >
+            <label class="form-label u-hiddenVisually" for="nl_email">{{lang 'common.email_address'}}</label>
+             <div class="form-prefixPostfix wrap">
+
+                    <div class="klaviyo_field_group" style="width:80%;">
+                        <input type="email" value="" name="email" style="width:100%; " class="form-input" id="nl_email" name="nl_email" placeholder="{{lang 'newsletter.email_placeholder'}}" />
+                    </div>
+
+                    <div class="klaviyo_form_actions"  style="width:20%;">
+                        <button type="submit" class="klaviyo_submit_button button button--primary form-prefixPostfix-button--postfix">JOIN</button>
+                    </div>
+
+                    <div class="klaviyo_messages">
+                        <div class="success_message" style="display:none;"></div>
+                        <div class="error_message" style="display:none;"></div>
+                    </div>
+    
+            </div>
+        </div>
+   </fieldset>
+</form>
+
+<script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
+<script type="text/javascript">
+  KlaviyoSubscribe.attachToForms('#email_signup', {
+    hide_form_on_success: true
+  });
+</script>

@@ -1,0 +1,1 @@
+module.exports = require("github:hubspot/pace@1.0.2/pace");

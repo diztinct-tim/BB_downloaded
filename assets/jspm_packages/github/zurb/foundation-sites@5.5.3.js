@@ -1,0 +1,1 @@
+module.exports = require("github:zurb/foundation-sites@5.5.3/js/foundation/foundation");

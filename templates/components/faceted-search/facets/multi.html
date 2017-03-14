@@ -1,0 +1,49 @@
+{{#if items}}
+<div class="accordion-block">
+    <div
+        class="accordion-navigation toggleLink {{#unless ../start_collapsed }} is-open {{/unless}}"
+        role="button"
+        data-collapsible="#facetedSearch-content--{{ facet }}">
+        <h5 class="accordion-title">
+            {{ title }}
+        </h5>
+
+        <div class="accordion-navigation-actions">
+            {{#if selected}}
+                <a href="{{ remove_url }}" class="facetedSearch-clearLink" data-faceted-search-facet>{{lang 'search.faceted.clear'}}</a>
+            {{/if}}
+            <span class="open-close">+</span>
+        </div>
+    </div>
+
+    <div id="facetedSearch-content--{{ facet }}" class="accordion-content {{#unless ../start_collapsed }} is-open {{/unless}}">
+        <ul id="facetedSearch-navList--{{ facet }}" data-facet="{{facet}}" class="navList" data-has-more-results="{{ has_more_results }}">
+            {{#each items}}
+                <li class="navList-item">
+                    <a
+                        href="{{ url }}"
+                        class="navList-action navList-action--checkbox {{#if selected }} is-selected {{/if}}"
+                        data-faceted-search-facet>
+                        {{ title }}
+                        
+                            <span>({{ count }})</span>
+                        
+
+                        <span class="navList-action-close" aria-hidden="true">
+                            <svg class="icon">
+                                <use xlink:href="#icon-close"/>
+                            </svg>
+                        </span>
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+
+        {{#if show_more_toggle}}
+            <a href="#facetedSearch-navList--{{ facet }}" role="button" class="toggleLink">
+                <span class="toggleLink-text toggleLink-text--off">More +</span>
+            </a>
+        {{/if}}
+    </div>
+</div>
+{{/if}}

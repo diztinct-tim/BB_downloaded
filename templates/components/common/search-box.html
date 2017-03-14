@@ -1,0 +1,41 @@
+{{{ snippet "forms_search"}}}
+<!-- <form class="form"  action="{{urls.search}}"> -->
+<form class="form"  action="/search.php" method="get">
+    <fieldset class="form-fieldset">
+        <div class="form-field">
+            <label class="form-label u-hiddenVisually" for="search_query_adv">{{lang 'search.results.form_label'}}</label>
+            <div class="form-prefixPostfix">
+                <input class="form-input" type="text" autocomplete="off" id="search_query_adv" name="q" value="{{forms.search.query}}" placeholder="Search">
+                <input id="search_button" class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="{{lang 'search.results.form_button_text'}}">
+            </div>
+        </div>
+    </fieldset>
+</form>
+<script language="javascript">
+    // CelebrosAutoCompleteV3("BeuBridge", "search_query_adv", onSelect, "BeuBridge-ac.celebros.com", "BeuBridge-ac.celebros.com", {acShowType: "regular",btnSearch:"search_button"});
+
+    CelebrosAutoCompleteV3("BeautyBrdg", "search_query_adv", onSelect, "BeautyBrdg-ac.celebros.com", "BeautyBrdg-ac.celebros.com", {acShowType: "regular",btnSearch:"search_button"});
+    
+    function onSelect(aParameter)
+    { 
+        if ((aParameter["SelectedURL"]!="")&&(aParameter["IsAutoComplete"]))
+        {   
+            var sCmp = (aParameter["SelectedURL"].indexOf("?") = -1) ? "?" : "&";
+            window.location = aParameter["SelectedURL"] + sCmp + "cmp=cel&trigger=ac";
+        }
+        else if (window['UITemplateConfigurationMaster'] != undefined) 
+        {
+            var e = jQueryCel.Event("keypress");
+            e.which = 13; e.keyCode = 13;
+            jQueryCel('#search').trigger(e);
+            return false;
+        }
+        else
+        { 
+            var targetLocation = "//www.beautybridge.com/search.php?q=" + encodeURI(aParameter["SelectedQuery"]);
+            if (aParameter["IsAutoComplete"].toString().toLowerCase() == "true")
+            targetLocation += "&Trigger=ac";
+            window.location = targetLocation;
+        }
+    }
+</script>

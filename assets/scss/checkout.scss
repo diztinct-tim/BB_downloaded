@@ -1,0 +1,42 @@
+// =============================================================================
+// Stencil Checkout  - Customize the checkout experience
+// =============================================================================
+
+#maintenance_notice{
+	display:none;
+}
+.header-logo h1{
+    font-size: 0px;
+}
+
+/* Rebillia Style Start */#CheckoutStepPaymentDetails .ExpressCheckoutContent {opacity: 0;visibility: hidden;}/* Rebillia Style Ends */
+
+@media only screen and (min-width: 300px) {
+
+	span.Logo1stWord{
+		text-indent: -999px;
+		display: block;
+		font-size: 0px;
+		background: url('../../content/img/beautybridge-logo.png');
+		height: 15px;
+		width: 220px;
+		margin: 0 auto;
+		background-size: 220px 15px;
+	}
+
+}
+
+@media only screen and (min-width: 600px) {
+
+	span.Logo1stWord{
+		text-indent: -999px;
+		display: block;
+		font-size: 0px;
+		background: url('../../content/img/beautybridge-logo.png');
+		height: 30px;
+		width: 440px;
+		background-size: 440px 30px;
+		margin: 0 auto;
+	}
+
+}

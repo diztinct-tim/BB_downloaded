@@ -1,0 +1,19 @@
+<span class="hidden-mobile">
+
+	{{> components/products/filter sort=pagination.category.sort}}
+
+	<span class="top-pagination">
+		{{> components/common/paginator pagination.category}}
+	</span>
+
+</span>
+
+<form action="{{urls.compare}}" method='POST' data-product-compare>
+
+        {{> components/products/grid products=category.products show_compare=category.show_compare theme_settings=theme_settings}}
+
+</form>
+
+<span class="bottom-pagination">
+{{> components/common/paginator pagination.category}}
+</span>

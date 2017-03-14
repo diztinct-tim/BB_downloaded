@@ -1,0 +1,1 @@
+module.exports = require("github:jackmoore/zoom@1.7.14/jquery.zoom");

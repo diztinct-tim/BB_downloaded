@@ -1,0 +1,71 @@
+{{#partial "head"}}
+    {{#if pagination.category.previous}}
+        <link rel="prev" href="{{pagination.category.previous}}">
+    {{/if}}
+    {{#if pagination.category.next}}
+        <link rel="next" href="{{pagination.category.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+
+<script>
+    window.History = {options: {delayInit: true} };
+</script>
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+<h1 class="page-heading">Search</h1>
+
+<div class="page search-page category-page cf">
+    <aside class="page-sidebar" id="faceted-search-container">
+
+        <div class="mobile-refine-heading cf">
+            <span class="p-count"></span>
+            <span class="narrow"></span>
+        </div>
+
+        <span class="narrow desktop-only">Refine By</span>
+
+        <div class="sidebar-wrap cf">
+
+            <div id="nextopia-sidebar">
+            </div>
+
+        </div>
+    </aside>
+
+    <main class="page-content" id="product-listing-container">
+        <div id="nextopia-main">
+        </div>
+    </main>
+</div>
+
+<script type="text/javascript">
+    
+// $(document).ready(function(){
+
+//     var target = document.getElementById('product-listing-container');                 
+//     var config = { 
+//         attributes: true,
+//         childList: true,
+//         characterData: true
+//     };
+//     observer.observe(target, config);
+//     console.log("registered an observer");
+
+// });
+
+// var observer = new MutationObserver(function(mutations){
+
+//     $(".productGrid > li").each(function(){
+//         var name = $(this).find(".card-title > a").text();
+//         console.log("name = " + name);
+//     });
+
+// });
+
+</script>
+
+{{/partial}}
+{{> layout/base}}

@@ -1,0 +1,1 @@
+module.exports = require("github:casperin/nod@2.0.10/nod");

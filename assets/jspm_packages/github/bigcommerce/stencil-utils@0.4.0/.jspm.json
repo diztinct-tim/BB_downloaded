@@ -1,0 +1,35 @@
+{
+  "name": "@bigcommerce/stencil-utils",
+  "version": "0.4.0",
+  "main": "main",
+  "license": "BSD-4-Clause",
+  "author": "Bigcommerce",
+  "jspm": {
+    "main": "main",
+    "directories": {
+      "lib": "src"
+    },
+    "dependencies": {
+      "asyncly/EventEmitter2": "github:asyncly/EventEmitter2@0.4.14",
+      "jquery": "github:components/jquery@2.1.4"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@5.8.24",
+      "babel-runtime": "npm:babel-runtime@5.8.24",
+      "core-js": "npm:core-js@1.1.4"
+    }
+  },
+  "devDependencies": {
+    "babel": "npm:babel-core@5.8.24",
+    "babel-runtime": "npm:babel-runtime@5.8.24",
+    "core-js": "npm:core-js@1.1.4"
+  },
+  "directories": {
+    "lib": "src"
+  },
+  "registry": "github",
+  "dependencies": {
+    "asyncly/EventEmitter2": "github:asyncly/EventEmitter2@0.4.14",
+    "jquery": "github:components/jquery@2.1.4"
+  }
+}

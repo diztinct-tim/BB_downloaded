@@ -1,0 +1,176 @@
+---
+
+products:
+    new:
+        limit: 12
+    top_sellers:
+        limit: 12
+
+---
+
+{{#partial "page"}}
+
+    {{#each shipping_messages}}
+        {{> components/common/alert-info message}}
+    {{/each}}
+
+<div class="main full home-page">
+
+    <!-- DESKTOP SLIDER -->
+    <div class="desktop-slider">
+        <!-- FIRST DESK SLIDE -->
+        <div class="desk-slide-one">
+            <a href="">
+            </a>
+        </div>
+        <!-- SECOND DESK SLIDE -->
+        <div class="desk-slide-two">
+            <a href="">
+            </a>
+        </div>
+        <!-- THIRD DESK SLIDE -->
+        <div class="desk-slide-three">
+            <a href="">
+            </a>
+        </div>
+    </div>
+
+    <!-- MOBILE SLIDER -->
+    <div class="mobile-slider">
+        <!-- FIRST MOBILE SLIDE -->
+        <div class="mobile-slide-one">
+            <a href="">
+            </a>
+        </div>
+        <!-- SECOND MOBILE SLIDE -->
+        <div class="mobile-slide-two">
+            <a href="">
+            </a>
+        </div>
+        <!-- THIRD MOBILE SLIDE -->
+        <div class="mobile-slide-three">
+            <a href="">
+            </a>
+        </div>
+    </div>
+
+    <div class="olapic-wrap">
+        <!-- New Olapic Widget 10/3/16 -->
+        <div id="olapic_specific_widget"></div>
+        <script type="text/javascript" src="https://photorankstatics-a.akamaihd.net/81b03e40475846d5883661ff57b34ece/static/frontend/latest/build.min.js"  data-olapic="olapic_specific_widget" data-instance="8301c2732a88aef9d90cc726d337065a" data-apikey="c8d32af7a5848379872b931655c849bffa25d283a9d4b300435aa1dfd8aa18f1" async="async"></script>
+    </div>
+
+    <div class="featured-brands">
+        <h4>FEATURED BRANDS</h4>
+        <a class="see-more" href="/brands/">ALL BRANDS</a>
+        <ul>
+            <li>
+                <a href="/brands/babor/">
+                    <img src="{{cdn 'img/feat-brands1.jpg'}}" alt="">
+                </a>
+            </li><li>
+                <a href="/brands/japonesque/">
+                    <img src="https://cdn3.bigcommerce.com/s-pxmpwj/product_images/uploaded_images/japonesque-200x75px.jpg" alt="">
+                </a>
+            </li><li>
+                <a href="/brands/philosophy/">
+                    <img src="{{cdn 'img/feat-brands3.jpg'}}" alt="">
+                </a>
+            </li><li>
+                <a href="/brands/exuviance/">
+                    <img src="{{cdn 'img/feat-brands4.jpg'}}" alt="">
+                </a>
+            </li><li>
+                <a href="/brands/thebalm/">
+                    <img src="{{cdn 'img/feat-brands5.jpg'}}" alt="">
+                </a>
+            </li><li>
+                <a href="/brands/borghese/">
+                    <img src="{{cdn 'img/feat-brands6.jpg'}}" alt="">
+                </a>
+            </li><li>
+                <a href="/brands/dermablend/">
+                    <img src="{{cdn 'img/feat-brands7.jpg'}}" alt="">
+                </a>
+            </li><li>
+                <a href="/brands/lippmann-collection/">
+                    <img src="{{cdn 'img/feat-brands8.jpg'}}" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mobile-cat-banners">
+        <div class="banner-one">
+            <a href="">
+            </a>
+        </div>
+        <div class="banner-two">
+            <a href="">
+            </a>
+        </div>
+        <div class="banner-three">
+            <a href="">
+            </a>
+        </div>
+    </div>
+
+    <div class="category-banner cf">
+        <div class="banner-one">
+            <a href="">
+            </a>    
+        </div>
+        <div class="banner-two">
+            <a href="">
+            </a>    
+        </div>
+        <div class="banner-three">
+            <a href="">
+            </a>    
+        </div>
+    </div>
+
+    
+    {{#if products.top_sellers}}
+        <div class="top-products">
+            {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+        </div>
+    {{/if}}
+    
+    {{#if products.new}}
+        <div class="new-products">
+            {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+        </div>
+    {{/if}}
+
+    <div class="home-yotpo-wrap">
+
+        <div class="yotpo yotpo-reviews-carousel" 
+        data-mode="manual" 
+        data-type="both" 
+        data-review-ids="33216589,33224404,33508126,33511137,33770692,33215765,33215310" 
+        data-show-bottomline="1" 
+        data-autoplay-enabled="1" 
+        data-autoplay-speed="3000" 
+        data-show-navigation="1" 
+        data-header-customisation-alignment="left" 
+        data-background-color="#ffffff">&nbsp;</div>
+        
+    </div>
+
+
+    <script>
+
+        dataLayer = [{
+          'pageType': 'home',
+          'pageTitle': 'home',
+          'email': '{{customer.email}}'
+        }];
+           
+    </script>
+
+
+
+</div>
+{{/partial}}
+{{> layout/base}}

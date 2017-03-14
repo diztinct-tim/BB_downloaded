@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <title>{{ head.title }}</title>
+        {{{ head.meta_tags }}}
+        {{{ head.config }}}
+        {{#block "head"}} {{/block}}
+
+        <link href="{{ head.favicon }}" rel="shortcut icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="google-site-verification" content="Gy-X3GDaKrcwTyQucdyNsin35NjaOZy8yXJfsQolVK4" />
+
+        {{{stylesheet '/assets/css/theme.css'}}}
+        <!-- {{ getFontsCollection }} -->
+        <script src="{{cdn '/assets/modernizr-custom.js'}}"></script>
+
+        {{{head.scripts}}}
+        {{{head.rsslinks}}}
+
+        {{inject 'themeImageSizes' theme_settings._images}}
+        {{inject 'genericError' (lang 'common.generic_error')}}
+        {{inject 'maintenanceMode' settings.maintenance}}
+        {{inject 'urls' urls}}
+        {{{snippet 'htmlhead'}}}
+        <link href='//fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+        <!-- Banners CSS -->
+        <link rel="stylesheet" href="/content/banners.css" type='text/css'>
+
+        <!-- MULTI LEVEL MENU CSS -->
+        <link rel="stylesheet" href="/content/dl-menu-styles-combined.css" type='text/css'>
+
+        <!-- celebros css & js -->
+        <script src="//uitemplatev3.celebros.com/uitemplate/Scripts/jquery.1.7.Celebros.min.js" type="text/javascript"></script>
+        <script src="//uitemplatev3.celebros.com/uitemplate/Scripts/jquery-ui-1.8.13-Celebros.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="//BeautyBrdg-ac.celebros.com/AutoComplete/Scripts/CelebrosAutoCompleteV3c.js"></script>  
+        <link type='text/css' rel="stylesheet" href="/content/celebros-ac.css">
+
+
+        <!-- Nextopia Search -->
+        <script type="text/javascript" src="//cdn.nextopia.net/v1.5.1/123b0d61a60fccc4789ba0fa17f8ec4f.js" async></script>
+
+    </head>
+    <body>
+
+        <!-- INITIALIZE GOOGLE TAG MANAGER DATA LAYER -->
+        <script>
+          dataLayer = [];
+        </script>
+        <!-- END INITIALIZE GOOGLE TAG MANAGER DATA LAYER -->
+
+        {{{snippet 'header'}}}
+        <div class="icons-svg-sprite">{{> components/common/icons/icon-defs }}</div>
+
+        {{#if settings.privacy_cookie}}
+            {{> components/common/cookie}}
+        {{/if}}
+
+        {{> components/common/header }}
+        {{> components/common/body }}
+        {{> components/common/footer }}
+
+        <script>
+            function startupApp(stencilBootstrap) {
+                stencilBootstrap("{{template_file}}", {{jsContext}}).load();
+            }
+        </script>
+
+        {{#if in_production}}
+            <script src="{{cdn '/assets/js/bundle.js'}}"></script>
+            <script>
+                startupApp(stencilBootstrap);
+            </script>
+        {{else}}
+            <script src="{{cdn '/assets/jspm_packages/system.js'}}"></script>
+            <script src="{{cdn '/assets/config.js'}}"></script>
+            <script src="{{cdn '/assets/js/dependency-bundle.js'}}"></script>
+            <script>
+                System.import("js/app").then(function(){ startupApp(stencilBootstrap)});
+            </script>
+        {{/if}}
+
+        <!-- BEGIN FOOTER SCRIPTS -->
+        {{{footer.scripts}}}
+        <!-- END FOOTER SCRIPTS -->
+
+
+        <!-- YOTPO INITIALIZE -->
+        <script type="text/javascript">
+        (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/kj8REvvTdnXvtBjLDKBFI8bToUW1wpAm6N3S6fj5/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+        </script>
+        <!-- END YOTPO INITIALIZE -->
+
+        <!-- YOTPO STAR RATING -->
+        <script type="text/javascript">//<![CDATA[
+            var div = document.createElement("div");
+            div.setAttribute('class', 'yotpo bottomLine');
+            div.setAttribute('data-product-id',"{{product.id}}");
+            div.setAttribute('data-name',"{{product.title}}");
+            div.setAttribute('data-url', "{{settings.base_url}}{{product.url}}");
+            document.querySelectorAll('.rating-placeholder')[0].appendChild(div)
+                //]]>
+        </script>
+        <!-- END YOTPO STAR RATING -->
+
+        <!-- YOTPO REVIEWS WIDGET -->
+        <script type="text/javascript">//<![CDATA[
+            var div = document.createElement("div");
+            div.setAttribute('class', 'yotpo yotpo-main-widget');
+            div.setAttribute('data-product-id',"{{product.id}}");
+            div.setAttribute('data-name',"{{product.title}}");
+            div.setAttribute('data-url', "{{settings.base_url}}{{product.url}}");
+            div.setAttribute('data-image-url', "{{getImage product.main_image 'product'}}");
+            div.setAttribute('data-price', "{{#if product.price.with_tax}}{{product.price.with_tax.value}}{{/if}}{{#if product.price.without_tax}}{{product.price.without_tax.value}}{{/if}}");
+            div.setAttribute('data-currency', "{{currency_selector.active_currency_code}}");
+            document.querySelectorAll('.productView')[0].appendChild(div)
+                //]]></script>
+        <!-- END YOTPO REVIEWS WIDGET -->
+
+        {{{snippet 'footer'}}}
+        <script src="/content/banners.js"></script>
+        <script src="/content/modernizr.custom.js"></script>
+        <script src="/content/jquery.dlmenu.js"></script>
+        <script>
+            $(function() {
+                $( '#dl-menu' ).dlmenu({
+                    animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
+                });
+            });
+        </script>
+
+    </body>
+</html>

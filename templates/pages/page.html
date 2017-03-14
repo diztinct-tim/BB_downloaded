@@ -1,0 +1,66 @@
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+<main class="page info-page">
+
+    <h1 class="page-heading">{{ page.title }}</h1>
+
+    {{#if page.sub_pages}}
+    <nav class="navBar navBar--sub">
+        <ul class="navBar-section account-navigation">
+        {{#each page.sub_pages}}
+            <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+        {{/each}}
+        </ul>
+    </nav>
+    {{/if}}
+
+    <div class="page-content page-content--centered">
+        {{#replace '%%Syndicate%%' page.content}}
+            {{> components/page/rss_feed}}
+        {{else}}
+            <p>{{{page.content}}}</p>
+        {{/replace}}
+
+         <div class="about-us-olapic">
+            <!-- old olapic -->
+            <!-- <div id="olapic_specific_widget"></div><script type="text/javascript" src="https://photorankstatics-a.akamaihd.net/81b03e40475846d5883661ff57b34ece/static/frontend/latest/build.min.js"  data-olapic="olapic_specific_widget" data-instance="9e6a094d0fdae841cc73760f9b7feb96" data-apikey="c8d32af7a5848379872b931655c849bffa25d283a9d4b300435aa1dfd8aa18f1" async="async"></script> -->
+
+            <!-- NEW Gallery Olapic 10/3/16 -->
+            <div id="olapic_specific_widget"></div><script type="text/javascript" src="https://photorankstatics-a.akamaihd.net/81b03e40475846d5883661ff57b34ece/static/frontend/latest/build.min.js"  data-olapic="olapic_specific_widget" data-instance="03e11fadc01438bf8489b9953effe700" data-apikey="c8d32af7a5848379872b931655c849bffa25d283a9d4b300435aa1dfd8aa18f1" async="async"></script>
+            
+        </div>
+        
+    </div>
+
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+
+    <script>
+
+        var slug = window.location.pathname;
+
+        dataLayer = [{
+          'pageType': 'static',
+          'pageTitle': '{{ page.title }}',
+          'slug': slug,
+          'email': '{{customer.email}}'
+        }];
+        console.log(dataLayer);
+           
+    </script>
+    
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

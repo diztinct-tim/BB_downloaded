@@ -1,0 +1,85 @@
+{{#if banners.bottom}}
+<div class="banners" data-banner-location="bottom">
+    <div class="banner">
+        {{{limit banners.bottom 1}}}
+    </div>
+</div>
+{{/if}}
+<footer class="footer cf" role="contentinfo">
+    <div class="container">
+
+
+
+        <div class="footer-inside-container">
+
+            <article class="footer-info-col footer-subscription" data-section-type="newsletterSubscription">
+                {{#if settings.show_newsletter_box}}
+                    {{> components/common/subscription-form}}
+                {{/if}}
+            </article>
+
+            <div class="social-icons">
+                <h4>FOLLOW US</h4>
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/beautybridge" target="_blank">
+                            <img src="{{cdn 'img/facebook.png'}}" alt="facebook">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/beautybridge" target="_blank">
+                            <img src="{{cdn 'img/twitter.png'}}" alt="twitter">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.pinterest.com/beautybridge/" target="_blank">
+                            <img src="{{cdn 'img/pinterest.png'}}" alt="pinterest">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/beautybridge/" target="_blank">
+                            <img src="{{cdn 'img/instagram.png'}}" alt="instagram">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/c/BeautyBridge" target="_blank">
+                            <img src="{{cdn 'img/youtube.png'}}" alt="youtube">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/+BeautyBridge/posts" target="_blank">
+                            <img src="{{cdn 'img/googleplus.png'}}" alt="google plus">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://blog.beautybridge.com/" target="_blank">
+                            <img src="{{cdn 'img/last-social.png'}}" alt="blog">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact-us">
+                <h4>Contact Us</h4>
+                <p><a href="mailto:customercare@beautybridge.com">customercare@beautybridge.com</a> <span class="mob-tab-break"></span>or by phone <a href="tel:+8668306161">1-866-830-6161</a></p>
+                <ul>
+                    <li><a href="/customer-care/">Customer Care</a></li>
+                    <li><a href="/about-us/">Company</a></li>
+                    <li><a href="/privacy-policy/">Policies</a></li>
+                    <li><a href="/affiliate-program/">Affiliates</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright cf">
+            <ul>
+                <li><a href="/customer-care/">Customer Care</a></li>
+                <li><a href="/about-us/">Company</a></li>
+                <li><a href="/privacy-policy/">Policies</a></li>
+                <li><a href="/affiliate-program/">Affiliate Program</a></li>
+            </ul>
+            <p>Copyright © 2017 BeautyBridge<span class="mobile-break"></span><a href="http://www.diztinct.com/bigcommerce-design.html" target="_blank">Bigcommerce Design</a> by Diztinct.com</p>
+        </div>
+        
+    </div>
+</footer>

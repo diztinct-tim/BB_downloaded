@@ -1,0 +1,88 @@
+<div class="banners cf" data-banner-location="top">
+    <div class="banner-container">
+        <div class="banner">
+            <p><a href="/current-promo/"></a></p>
+        </div>
+        <ul class="top-head cf">
+            <li><a href="/giftcertificates.php">GIFT CERTIFICATES</a></li>
+            <li><a href="/customer-care/">HELP</a></li>
+            <li class="account-menu-toggle"><span>ACCOUNT</span>
+                <ul>
+                    <li><a href="/account.php">My Account<a></li>
+                    {{#if customer}}
+                        <li><a href="{{urls.auth.logout}}">Logout</a></li>
+                    {{else}}
+                        <li class=""><a href="/login.php">Login</a> / <a href="/account.php">Register</a></li>
+                    {{/if}}
+                </ul>
+            </li>
+            <li class="navUser-item navUser-item--cart">
+                <a
+                    class="navUser-action"
+                    data-cart-preview
+                    data-dropdown="cart-preview-dropdown"
+                    data-options="align:right"
+                    href="{{urls.cart}}">
+                    <span class="navUser-item-cartLabel">BAG</span> <span class="countPill countPill--positive cart-quantity">({{cart.quantity}})</span>
+                </a>
+                <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<header class="header" role="banner">
+
+    <h1 class="header-logo">
+        <a href="/">
+            <img src="{{cdn 'img/beautybridge-logo.png'}}" alt="">
+        </a>
+    </h1>
+
+    <div class="menu-wrap">
+
+        <span class="center-wrap mob-menu dl-trigger">
+            <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+                <span class="mobileMenu-toggleIcon">Toggle menu</span><span class="menu-txt">MENU</span>
+            </a>
+        </span>
+
+        <span class="center-wrap search-wrap">
+            <div class="click-tog-search">
+                 SEARCH
+            </div>
+                       
+        </span>
+
+        <span class="center-wrap cart-wrap">
+            <a href="/cart.php">
+                <div class="cart-num">
+                    <span class="mob-cart-num">{{cart.quantity}}</span><img src="{{cdn 'img/mob-cart.jpg'}}" alt=""> BAG
+                </div>
+            </a>
+        </span>
+
+    </div>
+
+    <div class="navPages-quickSearch mob-tog-search">
+        {{> components/common/search-box}}
+    </div> 
+
+    {{> components/common/navigation}}
+
+    <div class="navPages-container mobile-nav" id="menu" data-menu>
+        {{> components/common/navigation-menu}}
+    </div>
+
+    <div class="navPages-container desk-nav" id="menu" data-menu>
+        {{> components/common/desk-navigation-menu}}
+    </div>
+
+    <div class="mobile-band">
+        <div class="banner">
+            <p><a href="/current-promo/"></a></p>
+        </div>
+    </div>
+
+</header>

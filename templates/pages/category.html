@@ -1,0 +1,113 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: 24
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{#partial "head"}}
+    {{#if pagination.category.previous}}
+        <link rel="prev" href="{{pagination.category.previous}}">
+    {{/if}}
+    {{#if pagination.category.next}}
+        <link rel="next" href="{{pagination.category.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+<h1 class="page-heading">{{category.name}}</h1>
+<!-- {{{category.description}}} -->
+{{{snippet 'categories'}}}
+<div class="page category-page">
+
+    <!-- FOR THE BRANDS LIST PAGE -->
+    <div class="quick-search brand-page-only">
+        <p>Quick Search</p>
+        <ul>
+            <li><a href="#a">A</a></li>
+            <li><a href="#b">B</a></li>
+            <li><a href="#c">C</a></li>
+            <li><a href="#d">D</a></li>
+            <li><a href="#e">E</a></li>
+            <li><a href="#f">F</a></li>
+            <li><a href="#g">G</a></li>
+            <li><a href="#h">H</a></li>
+            <li><a href="#i">I</a></li>
+            <li><a href="#j">J</a></li>
+            <li><a href="#k">K</a></li>
+            <li><a href="#l">L</a></li>
+            <li><a href="#m">M</a></li>
+            <li><a href="#n">N</a></li>
+            <li><a href="#o">O</a></li>
+            <li><a href="#p">P</a></li>
+            <li><a href="#q">Q</a></li>
+            <li><a href="#r">R</a></li>
+            <li><a href="#s">S</a></li>
+            <li><a href="#t">T</a></li>
+            <li><a href="#u">U</a></li>
+            <li><a href="#v">V</a></li>
+            <li><a href="#w">W</a></li>
+            <li><a href="#x">X</a></li>
+            <li><a href="#y">Y</a></li>
+            <li><a href="#z">Z</a></li>
+        </ul>
+    </div>
+    
+    <ul class="brandGrid brand-page-only">
+        {{#each category.subcategories}}
+            <li class="brand"><a href="{{url}}" alt="{{name}}">{{name}}</a></li>
+        {{/each}}
+    </ul>
+
+    <aside class="page-sidebar" id="faceted-search-container">
+        {{> components/category/sidebar}}
+    </aside>
+
+    <main class="page-content" id="product-listing-container">
+        
+        <div class="admin-input-area {{#if category.image}}cat-has-img{{/if}}">
+            {{#if category.image}}
+                <img class="cat-img" src="{{getImage category.image 'gallery'}}">
+            {{/if}}
+            {{{category.description}}}
+        </div>
+
+        {{#if category.products}}
+            {{> components/category/product-listing}}
+        {{else}}
+            <p>{{lang 'categories.no_products'}}</p>
+        {{/if}}
+    
+        <div class="seo-txt"></div>
+        
+        <div class="category-olapic">
+
+            <!-- NEW OLAPIC 10/3/16 -->
+            <div id="olapic_specific_widget"></div><script type="text/javascript" src="https://photorankstatics-a.akamaihd.net/81b03e40475846d5883661ff57b34ece/static/frontend/latest/build.min.js"  data-olapic="olapic_specific_widget" data-instance="1daed23c93877857a41834c7f1389898" data-apikey="c8d32af7a5848379872b931655c849bffa25d283a9d4b300435aa1dfd8aa18f1" data-tags="{{category.id}}" async="async"></script>
+            <!-- Please place the dynamic variable for you product unique id into the 'data-tags' attribute in our javascript -->
+            
+        </div>
+
+        <script>
+
+            var slug = window.location.pathname;
+
+            dataLayer = [{
+              'pageType': 'category',
+              'categoryId': '{{category.id}}',
+              'pageTitle': '{{category.name}}',
+              'slug': slug,
+              'email': '{{customer.email}}'
+            }];
+            console.log(dataLayer);
+            
+        </script>      
+
+    </main>
+</div>
+
+{{/partial}}
+{{> layout/base}}
